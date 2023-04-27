@@ -1,5 +1,5 @@
 **Original Author:[nadare881](https://github.com/nadare881)**
-This TIPS explains how data training is done.
+</br>This TIPS explains how data training is done.
 
 # Training flow
 I will explain along the steps in the training tab of the GUI.
