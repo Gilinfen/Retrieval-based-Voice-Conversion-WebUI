@@ -1,3 +1,4 @@
+Original Author:[nadare881](https://github.com/nadare881)
 # about faiss
 faiss is a library of neighborhood searches for dense vectors, developed by facebook research, which efficiently implements many approximate neighborhood search methods.
 Approximate Neighbor Search finds similar vectors quickly while sacrificing some accuracy.
