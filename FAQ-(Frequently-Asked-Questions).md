@@ -22,7 +22,7 @@ Please disable system LAN proxy/global proxy and then refresh.<br>
 
 ## Q6:How to train and infer without the WebUI?
 Training script:
-You can run the WebUI first, and the command-line versions of dataset preprocessing and training will be displayed in the message window.
+You can run the WebUI first, and the command-line versions of dataset preprocessing and training will be displayed in the message window.<br>
 Inference script:
 https://huggingface.co/lj1995/VoiceConversionWebUI/blob/main/myinfer.py (to be updated)<br>
 
