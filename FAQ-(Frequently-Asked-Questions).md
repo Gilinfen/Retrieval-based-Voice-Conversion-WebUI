@@ -4,19 +4,19 @@ It is most likely not a FFmpeg issue, but rather an audio path issue;
 FFmpeg may encounter an error when reading paths containing special characters like spaces and (), which may cause an FFmpeg error; and when the training set's audio contains Chinese paths, writing it into filelist.txt may cause a utf8 error.<br>
 
 ## Q2:Cannot find index file after "One-click Training".
-If it displays "Training is done. The program is closed," then the model has been trained successfully, and any subsequent errors are false;
+If it displays "Training is done. The program is closed," then the model has been trained successfully, and the subsequent errors are fake;
 
 The lack of an 'added' index file after One-click training may be due to the training set being too large, causing the addition of the index to get stuck; this has been resolved by using batch processing to add the index, which solves the problem of memory overload when adding the index. As a temporary solution, try clicking the "Train Index" button again.<br>
 
 ## Q3:Cannot find the model in “Inferencing timbre” after training
-Click “Refresh timbre list” and check again; if still not visible, check if there are any errors during training and send screenshots of the console, web UI, and logs/experiment_name to the developers for further analysis.<br>
+Click “Refresh timbre list” and check again; if still not visible, check if there are any errors during training and send screenshots of the console, web UI, and logs/experiment_name/*.log to the developers for further analysis.<br>
 
 ## Q4:How to share a model/How to use others' models?
-The pth files stored in rvc_root/logs/experiment_name are not meant for sharing or inference, but for storing the experiment state for reproducibility and further training. The model to be shared should be the 60+MB pth file in the weights folder;
+The pth files stored in rvc_root/logs/experiment_name are not meant for sharing or inference, but for storing the experiment checkpoits for reproducibility and further training. The model to be shared should be the 60+MB pth file in the weights folder;
 
 In the future, weights/exp_name.pth and logs/exp_name/added_xxx.index will be merged into a single weights/exp_name.zip file to eliminate the need for manual index input; so share the zip file, not the pth file, unless you want to continue training on a different machine;
 
-Copying/sharing the several hundred MB pth files from the logs folder to the weights folder for forced inference may result in errors such as missing f0, tgt_sr, and other keys. You need to use the ckpt tab at the bottom to manually or automatically (if the information is found in the local logs), select whether to include pitch and target audio sampling rate options and then extract the smaller model. After extraction, there will be a 60+ MB pth file in the weights folder, and you can refresh the voices to use it.<br>
+Copying/sharing the several hundred MB pth files from the logs folder to the weights folder for forced inference may result in errors such as missing f0, tgt_sr, or other keys. You need to use the ckpt tab at the bottom to manually or automatically (if the information is found in the logs/exp_name), select whether to include pitch infomation and target audio sampling rate options and then extract the smaller model. After extraction, there will be a 60+ MB pth file in the weights folder, and you can refresh the voices to use it.<br>
 
 ## Q4:Connection Error.
 You may have closed the console (black command line window).<br>
@@ -42,8 +42,10 @@ If the training dataset's audio quality is poor and the noise floor is high, 20-
 If the training set audio quality is high, the noise floor is low, and there is sufficient duration, you can increase it. 200 is acceptable (since training is fast, and if you're able to prepare a high-quality training set, your GPU likely can handle a longer training duration without issue).<br>
 
 ## Q9:How much training set duration is needed?
-With guaranteed high sound quality and low bottom noise, more can be added if the dataset's timbre is uniform.<br>
+
 A dataset of around 10min to 50min is recommended.<br>
+
+With guaranteed high sound quality and low bottom noise, more can be added if the dataset's timbre is uniform.<br>
 
 For a high-level training set (lean + distinctive tone), 5min to 10min is fine.<br>
 
@@ -56,7 +58,7 @@ If the tone quality of the pre-trained model and inference source is higher than
 
 The index rate is used to reduce/resolve the timbre leakage problem. If the index rate is set to 1, theoretically there is no timbre leakage from the inference source and the timbre quality is more biased towards the training set. If the training set has a lower sound quality than the inference source, then a higher index rate may reduce the sound quality. Turning it down to 0 does not have the effect of using retrieval blending to protect the training set tones.<br>
 
-If the training set has good audio quality and long duration, turn up the total_epoch, when the model itself is less likely to refer to the inferred source and the underlying model, and there is little "tone leakage", the index_rate is not important and you can even not create/share the index file.<br>
+If the training set has good audio quality and long duration, turn up the total_epoch, when the model itself is less likely to refer to the inferred source and the pretrained underlying model, and there is little "tone leakage", the index_rate is not important and you can even not create/share the index file.<br>
 
 ## Q11:How to choose the gpu when inferring?
 In the config.py file, select the card number after "device cuda:".<br>
@@ -64,7 +66,7 @@ In the config.py file, select the card number after "device cuda:".<br>
 The mapping between card number and graphics card can be seen in the graphics card information section of the training tab.<br>
 
 ## Q12:How to use the model saved in the middle of training?
-Save via Model extraction at the bottom of the ckpt tab.
+Save via model extraction at the bottom of the ckpt processing tab.
 
 
 
