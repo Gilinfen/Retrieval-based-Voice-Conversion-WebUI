@@ -37,6 +37,9 @@ jupyterlab->打开终端->ctrl+v黏贴命令
 
 ![5c-一键训练](https://user-images.githubusercontent.com/129054828/236988492-41abad98-2b6d-4e89-bebf-2ea7cedc18f7.png)
 
+这是训练完了
+
+![5d-后台训练中-已训练完成](https://user-images.githubusercontent.com/129054828/237048384-f1433625-54ba-4bc5-b324-242d25158293.png)
 
 # 6-下载推理用模型和索引
 
