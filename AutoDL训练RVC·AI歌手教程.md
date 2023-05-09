@@ -22,7 +22,7 @@ jupyterlab->打开终端->ctrl+v黏贴命令
 ![3](https://user-images.githubusercontent.com/129054828/236988726-00a5d406-1ebc-4c3c-bc16-1fb7fd82f515.png)
 
 
-# 4-（可选前置）使用HP2或HP5模型进行伴奏提取（HP5去除和声和伴奏幅度更大，但是主人声更容易丢失）。填写输入音频素材和输出人声文件夹的路径。
+# 4-（可选前置）使用HP2或HP5模型进行人声提取伴奏去除（HP5去除和声和伴奏幅度更大，但是主人声更容易丢失）。填写输入音频素材和输出人声文件夹的路径。
 
 ![4-前置-提取人声](https://user-images.githubusercontent.com/129054828/236988025-bd622125-d2a1-4023-af4c-15d66ad9b652.png)
 
