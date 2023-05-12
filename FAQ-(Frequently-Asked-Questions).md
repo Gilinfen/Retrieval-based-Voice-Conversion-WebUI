@@ -84,5 +84,12 @@ The mapping between card number and graphics card can be seen in the graphics ca
 ## Q13:How to use the model saved in the middle of training?
 Save via model extraction at the bottom of the ckpt processing tab.
 
+## Q14:File/memory error(when training)?
+Too many processes and your memory is not enough. You may fix it by:
+
+1、decrease "Number of CPU threads".
+
+2、pre-cut trainset to shorter audio files.
+
 
 
