@@ -134,4 +134,6 @@ The issue will happen in windows, install https://aka.ms/vs/17/release/vc_redist
 
 Delete the wav files whose size is significantly smaller than others, and that won't happen again. Than click "train the model"and "train the index".
 
+## Q18: RuntimeError: The size of tensor a (24) must match the size of tensor b (16) at non-singleton dimension 2
 
+Do not change the sampling rate and then continue training. If it is necessary to change, the exp name should be changed and the model will be trained from scratch. You can also copy the pitch and features (0/1/2/2b folders) extracted last time to accelerate the training process.
